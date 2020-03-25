@@ -1,2 +1,11 @@
-# andresro30
-ANDRES-ROCHA-ARSW-T2
+# Parcial de Segundo corte ARSW - CoronavirusTest
+
+## Diseño de la arquitectura
+
+## Como ejecutar el programa
+
+## Como extender
+
+## Despliegue en heroku
+
+
