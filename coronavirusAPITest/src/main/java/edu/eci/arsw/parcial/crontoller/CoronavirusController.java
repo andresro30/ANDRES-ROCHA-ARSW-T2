@@ -26,7 +26,7 @@ public class CoronavirusController {
     public ResponseEntity<?> getCasesByCountry(@PathVariable(name = "name")String name) {
         try{
             List<Provincia> provincias = null;
-            services.getCasesByCountry(name);
+            provincias = services.getCasesByCountry(name);
             return new ResponseEntity<>(provincias, HttpStatus.ACCEPTED);
         }catch (Exception e){
             e.printStackTrace();
@@ -39,7 +39,8 @@ public class CoronavirusController {
     public ResponseEntity<?> getAllCases(){
         try{
             List<Country> paises = null;
-            services.getAllCases();
+            paises = services.getAllCases();
+            System.out.println(paises);
             return new ResponseEntity<>(paises, HttpStatus.ACCEPTED);
         }catch(Exception e){
             e.printStackTrace();

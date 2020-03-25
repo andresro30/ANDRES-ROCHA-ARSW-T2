@@ -5,21 +5,20 @@ import java.time.LocalDate;
 public class Provincia {
 
     private String city;
-    private String name;
+    private String province;
     private String country;
     private String lastUpdate;
     private String keyId;
-    private Integer confirmed;
-    private Integer deaths;
-    private Integer recovered;
+    private int confirmed;
+    private int deaths;
+    private int recovered;
 
-    public Provincia(String city, String name, String country, String lastUpdate, String keyId, Integer casesConfirmed, Integer deaths, Integer recovered){
+    public Provincia(String city, String province, String country, String lastUpdate, String keyId, Integer deaths, Integer recovered){
         this.city = city;
-        this.name = name;
+        this.province = province;
         this.country = country;
         this.lastUpdate = lastUpdate;
         this.keyId = keyId;
-        this.confirmed = confirmed;
         this.deaths = deaths;
         this.recovered = recovered;
     }
@@ -53,7 +52,7 @@ public class Provincia {
     }
 
     public String getName() {
-        return name;
+        return province;
     }
 
     public Integer getCasesConfirmed() {
@@ -73,7 +72,7 @@ public class Provincia {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.province = name;
     }
 
     public String getKeyId() {

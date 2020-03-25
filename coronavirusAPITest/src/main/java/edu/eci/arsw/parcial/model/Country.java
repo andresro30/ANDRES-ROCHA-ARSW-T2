@@ -5,25 +5,23 @@ import java.util.List;
 public class Country {
 
     private String name;
-    private Integer numberDeaths;
-    private Integer numberInfected;
-    private Integer numberCured;
-    private List<Provincia> provinciaList;
+    private int deaths;
+    private int confirmed;
+    private int recovered;
 
-    public Country(String name, Integer numberDeaths, Integer numberInfected, Integer numberCured, List<Provincia> provinciaList){
+    public Country(String name, Integer deaths, Integer infected, Integer recovered){
         this.name = name;
-        this.numberDeaths = numberDeaths;
-        this.numberInfected = numberInfected;
-        this.numberCured = numberCured;
-        this.provinciaList = provinciaList;
+        this.deaths = deaths;
+        this.confirmed = infected;
+        this.recovered = recovered;
     }
 
-    public Integer getNumberDeaths() {
-        return numberDeaths;
+    public Integer getDeaths() {
+        return deaths;
     }
 
-    public void setNumberDeaths(Integer numberDeaths) {
-        this.numberDeaths+=numberDeaths;
+    public void setDeaths(Integer deaths) {
+        this.deaths+=deaths;
     }
 
     public String getName() {
@@ -34,27 +32,20 @@ public class Country {
         this.name = name;
     }
 
-    public Integer getNumberInfected() {
-        return numberInfected;
+    public Integer getConfirmed() {
+        return confirmed;
     }
 
-    public Integer getNumberCured() {
-        return numberCured;
+    public Integer getRecovered() {
+        return recovered;
     }
 
-    public void setNumberCured(Integer numberCured) {
-        this.numberCured+=numberCured;
+    public void setRecovered(Integer numberCured) {
+        this.recovered+=numberCured;
     }
 
-    public void setNumberInfected(Integer numberInfected) {
-        this.numberInfected+=numberInfected;
+    public void setConfirmed(Integer numberInfected) {
+        this.confirmed+=numberInfected;
     }
 
-    public List<Provincia> getProvinciaList() {
-        return provinciaList;
-    }
-
-    public void setProvinciaList(List<Provincia> provinciaList) {
-        this.provinciaList = provinciaList;
-    }
 }

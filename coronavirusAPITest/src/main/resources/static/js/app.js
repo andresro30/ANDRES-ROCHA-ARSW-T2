@@ -1,12 +1,20 @@
 var app = (function(){
-    var generarFilaCountry = (function(lista){
-        $("#tableOne").empty();
+
+    var generarFilaCountry = function(lista){
+        console.log(lista);
+        console.log(typeof(lista));
+        $("#tableOne > tbody").empty();
         lista.map(function(country){
-            var fila = "<tr><td>"+country.name+"</td><td>"+country.deaths+"</td><td>"+country.confirmed+"</td><td>"+country.recovered+"</td></tr>";
-            $("#table").append(fila)
+            var fila = "<tr>"+
+            "<td>"+country.name+"</td>"+
+            "<td>"+country.deaths+"</td>"+
+            "<td>"+country.confirmed+"</td>"+
+            "<td>"+country.recovered+"</td>"+
+            "</tr>";
+            $("#tableOne > tbody").append(fila)
         })
         //plotMarkers(lista);
-    });
+    };
 
     /*
     var generarFilaProvincia = (function(lista){
@@ -24,9 +32,9 @@ var app = (function(){
         apiClient.getCasesByCountry(name,generarFilaProvincia)
      });
     */
-     getAllCases = (function(){
-        apiClient.getAllCases(generarFilaCountry)
-     });
+     getAllCases = function(){
+        apiClient.getAllCases(generarFilaCountry);
+     };
 
     return{
         getAllCases: getAllCases,

@@ -84,7 +84,7 @@ public class CoronavirusServicesImp implements CoronavirusServices {
         } catch (UnirestException e) {
             e.printStackTrace();
         }
-        System.out.println(responseApi);
+        //System.out.println(responseApi);
 
 
         JSONArray datos = responseApi.getBody().getObject().getJSONObject("data").getJSONArray("covid19Stats");
@@ -93,7 +93,9 @@ public class CoronavirusServicesImp implements CoronavirusServices {
         countries = gson.fromJson(datos.toString(),new TypeToken<List<Provincia>>(){}.getType());
         System.out.println("Pasó a java");
         System.out.println(countries);
-        return createListCountries(countries);
+        List<Country> ans = createListCountries(countries);
+        System.out.println(ans);
+        return ans;
     }
 
     /*
@@ -127,22 +129,21 @@ public class CoronavirusServicesImp implements CoronavirusServices {
 
         for(Provincia provincia: datos){
             String name = provincia.getCountry();
-            //System.out.println(provincia.getCountry()+" "+provincia.getCasesConfirmed()+" "+provincia.getDeaths());
             if(countries.containsKey(name)){
                 //cache.getCacheCountries().get(name).add(provincia);
                 countries.get(name).add(provincia);
-                nameCountry.get(name).setNumberCured(provincia.getRecovered());
-                nameCountry.get(name).setNumberDeaths(provincia.getDeaths());
-                nameCountry.get(name).setNumberInfected(provincia.getCasesConfirmed());
+                nameCountry.get(name).setRecovered(provincia.getRecovered());
+                nameCountry.get(name).setDeaths(provincia.getDeaths());
+                nameCountry.get(name).setConfirmed(provincia.getCasesConfirmed());
             }
             else{
                 ArrayList<Provincia> temp = new ArrayList<>();
                 temp.add(provincia);
                 //cache.getCacheCountries().put(name,temp);
                 countries.put(name,temp);
-                Country country = new Country(name,provincia.getDeaths(),provincia.getCasesConfirmed(),provincia.getRecovered(),temp);
-                System.out.println(name);
+                Country country = new Country(name,provincia.getDeaths(),provincia.getCasesConfirmed(),provincia.getRecovered());
                 nameCountry.put(name,country);
+                countryList.add(country);
             }
         }
         return countryList;
