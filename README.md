@@ -1,5 +1,36 @@
 # Escuela Colombiana de Ingeniería Julio Garavito - Arquitecturas de Software ARSW - Parcial Segundo Tercio
 
+## Requerimientos de Entrega
+
+1.  La aplicación funcionando en Heroku con el nombre (NOMBRE-APELLIDO-ARSW-T2) y el código fuente almacenado en un proyecto GitHub con el nombre (NOMBRE-APELLIDO-ARSW-T2).
+2.  Los fuentes deben estar documentados y bien estructurados para generar el Javadoc.
+3.  El README.md debe describir:
+	1. El diseño de arquitectura: 
+	La arquitectura con que se realizó el parcial fue Cliente/Servidor en donde tenemos un proyecto maven de java que funciona como Servidor. Este proyecto está consumiendo una API externa, y 
+	por último tenemos un archivo apiClient.js que cumple el papel de cliente y realiza las peticiones al servidor. 
+	
+	2. La forma de ejecutar el programa localmente:
+	
+	* Para compilar:* mvn package
+	* Para ejecucar proyecto:* mvn spring-boot:run
+	* Para ejecutar pruebas:* mvn test
+	
+	
+	3. Explicar cómo se puede extender y cómo podría, por ejemplo, hacer que una función específica la implementara un proveedor de servicios diferente.
+	Si se quiere extender el proyecto se deeb agregar una nueva clase a las interfaces que este tiene: CoronavirusCache y CoronavirusSrvices. Además de añadirlos a sus 
+	diferentes clases que implementan las interfaces.
+	
+	
+	4. Indique la urls de Heroku
+	
+	Link de Heroku: 
+	
+    5. Indique si hizo los bonos y una evidencia de su ejecución.
+4.  Suba el zip del proyecto al aula con el nombre (NOMBRE-APELLIDO-ARSW-T2).
+5.  Guarde una copia de su proyecto.
+
+
+
 ## Preparación para el Parcial
 
 Con el objetivo de preparar el examen final del segundo tercio, por favor siga las siguientes instrucciones.
